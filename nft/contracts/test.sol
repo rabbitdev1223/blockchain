@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-
+pragma solidity ^0.8.7;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
@@ -9,7 +9,7 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Context.sol";
 
-contract AvaxGeisha is ERC721, Ownable {
+contract Hcanft is ERC721, Ownable {
     using SafeMath for uint256;
     using Strings for uint256;
 
@@ -33,7 +33,7 @@ contract AvaxGeisha is ERC721, Ownable {
     mapping(uint256 => uint256) private claimedDividends;
 
     // initialize contract while deployment with contract's collection name and token
-    constructor() ERC721("Avax Geisha", "GEISHA") {
+    constructor() ERC721("Hcanft", "hnft") {
         tokenPrimaryPrice = 1.25 ether;
     }
 
@@ -45,7 +45,7 @@ contract AvaxGeisha is ERC721, Ownable {
 
         uint256 _total = totalSupply();
         require(mintAmount_ + _total <= MAX_ELEMENTS, "Max limit");
-        require(_total <= MAX_ELEMENTS, "Sold");
+//        require(_total <= MAX_ELEMENTS, "Sold");
         require(mintAmount_ <= MAX_MINTABLE, "Exceeds number");
 
 //        require(startMintTime <= block.timestamp, 'Mint will start on 2022-02-22 14:22 UTC');
@@ -73,8 +73,8 @@ contract AvaxGeisha is ERC721, Ownable {
 
         uint256 _total = totalSupply();
         require(mintAmount_ + _total <= MAX_ELEMENTS, "Max limit");
-        require(_total <= MAX_ELEMENTS, "Sold");
-        require(mintAmount_ <= MAX_MINTABLE, "Exceeds number");
+//        require(_total <= MAX_ELEMENTS, "Sold");
+//        require(mintAmount_ <= MAX_MINTABLE, "Exceeds number");
 
         //require(startMintTime <= block.timestamp, 'Mint will start on 2022-02-22 14:22 UTC');
 
